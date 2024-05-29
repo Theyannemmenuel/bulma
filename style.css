@@ -1,0 +1,63 @@
+body{
+    background-color: rgb(228, 233, 222); 
+}
+
+.navbar{
+    background-color: rgb(228, 233, 222); ;
+}
+.navbar-brand img{
+    width: 35%;
+}
+.navbar-link, a.navbar-item{
+    background-color: rgb(228, 233, 222);
+    
+}
+
+.navbar-link, a.navbar-item:hover{
+    background-color: rgb(228, 233, 222);
+    color: blue;
+    
+}
+
+
+.columns.is-vcentered h1 {
+    color: rgb(0, 0, 0); 
+}
+
+.column.is-6 h1{
+    color: black;
+}
+
+.title.is-5{
+    color: black;
+}
+
+.rating{
+    color: red;
+}
+
+.column.is-4 p{
+    color: black;
+}
+
+@media (min-width: 1024px) {
+    .box{
+        width: min-content;
+        display: inline-block;
+        padding: 20px 145px 5px;
+        margin-left: 150px;
+    }
+
+    .box p{
+        display: inline-table;
+    }
+
+    .box strong{
+        display: inline-table;
+    }
+   .content{
+    display: inline-block;
+   }
+
+
+}
