@@ -1,9 +1,18 @@
 body{
     background-color: rgb(228, 233, 222); 
 }
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
 
 .navbar{
-    background-color: rgb(228, 233, 222); ;
+    background-color: rgb(228, 233, 222); 
+    
 }
 .navbar-brand img{
     width: 35%;
@@ -24,6 +33,9 @@ body{
     color: rgb(0, 0, 0); 
 }
 
+.columns.is-vcentered {
+    padding-top: 60px;
+}
 .column.is-6 h1{
     color: black;
 }
@@ -58,17 +70,73 @@ body{
    .content{
     display: inline-block;
    }
-
-
+   .container:not(.is-max-desktop):not(.is-max-widescreen){
+    max-width: 1700px;
+   }
 }
-
 
 .title.is-1 {
     color: black;
+    font-size: 2rem;
 }
 
 
-
+.input.input.is-medium{
+    background-color: hsl(0, 0%, 47%);
+}
 .title.is-4 {
     color: black;
 }
+
+.footer .columns.is-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+.footer{
+    background-color: hsl(171, 100%, 41%);
+}
+.footer .columns .column {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .columns .column a {
+    margin: 0 10px; 
+}
+
+.footer .content.has-text-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    margin-top: 20px; 
+    color: black;
+}
+
+.footer .columns .column .button.is-text {
+   color: black;
+   text-decoration: none;
+}
+.footer .icon{
+    color: red;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.section, .footer {
+    padding: 1.5rem 1rem;
+}
+
+
