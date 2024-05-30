@@ -29,6 +29,9 @@ html, body {
     color: blue;
     
 }
+strong{
+    color: black;
+}
 .image img {
     display: block;
     height: auto;
