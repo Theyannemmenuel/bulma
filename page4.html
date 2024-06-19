@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="page4.css">
+</head>
+<body>
+    <section class="section header-section">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <img src="Design_sans_titre-removebg-preview.png" alt="Logo">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasic" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="index.html">Accueil</a>
+                        <a class="navbar-item" href="page3.html">Produits</a>
+                        <a class="navbar-item" href="page2.html">À propos</a>
+                        <a class="navbar-item" href="#">Contact</a>
+                        <a class="navbar-item" href="page4.html">
+                            <img src="cart.png" alt="cart icon" width="30px">
+                            <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </nav> 
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Votre Panier</h1>
+            <div class="cart-items" id="cart-items">
+                <!-- Les articles du panier seront ajoutés ici dynamiquement -->
+            </div>
+            <div class="total" id="total">
+                <h2 class="title">Total: 0€</h2>
+                <button class="button is-primary" id="checkout-button" disabled><a href="page5.html">Passer à la caisse</a></button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <div class="columns is-mobile">
+                <div class="column">
+                    <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
+                </div>
+                <div class="column">
+                    <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="column">
+                    <a href="#" class="icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="column">
+                    <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <a href="" class="button is-text">Accueil</a>
+                </div>
+                <div class="column">
+                    <a href="page3.html" class="button is-text">Produits</a>
+                </div>
+                <div class="column">
+                    <a href="page2.html" class="button is-text">À propos</a>
+                </div>
+                <div class="column">
+                    <a href="" class="button is-text">Contact</a>
+                </div>
+            </div>
+            <p>&copy; Yann Amangoua | Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="page4.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            
+            if ($navbarBurgers.length > 0) {
+
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+
+                        
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

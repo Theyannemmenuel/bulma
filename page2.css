@@ -59,6 +59,7 @@ p.content{
     right: 0;
     top: 0;
     width: 103%;
+    box-shadow: 10px 5px 12px hsl(171, 100%, 41%);
 }
 .column.is-half h1{
     color: black;
@@ -82,6 +83,11 @@ p.content{
 }
 .columns.is-multiline{
     margin-top: 211px;
+}
+
+
+section.section{
+    margin-bottom: -2px;
 }
 
 .footer .columns.is-mobile {
@@ -139,4 +145,10 @@ p.content{
    .columns.is-multiline {
     margin-top: 500px;
    }
+   .navbar-item, .navbar-link {
+    align-items: center;
+    display: flex;
+    font-size: xx-large;
+    color: black;
+}
 }

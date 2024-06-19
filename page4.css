@@ -13,6 +13,75 @@
     --primary-invert: hsl(198deg, 100%, 30%);
 }
 
+.header-section {
+    background-color:  rgb(228, 233, 222);
+    padding: 1rem 0;
+}
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.footer{
+    background-color: hsl(198deg, 100%, 70%)
+}
+
+.button.is-primary{
+    background-color: var(--primary);
+        border-color: var(--primary);
+        
+}
+strong{
+    color: black;
+}
+.navbar-brand img {
+    height: auto;
+}
+
+.cart-items .box {
+    margin-bottom: 1rem;
+    background-color: var(--primary);
+}
+.cart-items .box img{
+    background-color: var(--primary);
+}
+
+.image img{
+    background-color: var(--primary);
+}
+
+.image.is-64x64 {
+    height: 64px;
+    width: 64px;
+    background-color: var(--primary);
+    color: var(--primary);
+}
+
+.cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.25em 0.6em;
+    font-size: 0.75rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.total {
+    text-align: right;
+    margin-top: 2rem;
+}
+
+#checkout-button:disabled {
+    background-color: grey;
+    border-color: grey;
+    background-color: var(--primary);
+}
+
+
 body{
     background-color: rgb(228, 233, 222); 
 }
@@ -30,7 +99,7 @@ html, body {
     
 }
 .navbar-brand img{
-    width: 35%;
+    width: 34%;
 }
 .navbar-link, a.navbar-item{
     background-color: rgb(228, 233, 222);
@@ -71,9 +140,7 @@ html, body {
 .column.is-4 p{
     color: black;
 }
-.hero-body{
-    background-color: var(--primary);
-}
+
 section.section{
     margin-bottom: -2px;
 }
@@ -158,27 +225,11 @@ section.section{
     
    
 }
-.select select:not([multiple]) {
-    padding-inline-end: 2.5em;
-    background-color: var(--primary);
-}
 
 @media (max-width: 767px) {
 
 .row{
     width: 100%;
-}
-
-
-.select select {
-    cursor: pointer;
-    display: block;
-    font-size: 1.2em;
-    max-width: 100%;
-    outline: none;
-    background-color:var(--primary);
-    color: black;
-    border: 1px solid var(--primary);
 }
 
 }
@@ -190,7 +241,6 @@ section.section{
 .button.is-fullwidth {
     display: flex;
     width: auto;
-    background-color: var(--primary);
 }
 
 
@@ -210,7 +260,7 @@ section.section{
 }
 
 .footer{
-    background-color: var(--primary) ;
+    background-color: var(--primary);
 }
 
 .footer .columns .column {
@@ -226,8 +276,14 @@ section.section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--primary);
 }
-
+h2.title{
+    color: black;
+}
+p{
+    color: black;
+}
 .footer p {
     margin-top: 20px; 
     color: black;
@@ -301,6 +357,8 @@ img {
     background-color: beige;
     color: black;
 }
+
+
 
 .product_section .heading_container {
     margin-bottom: 20px;
@@ -505,12 +563,4 @@ img {
 
 .section section{
     padding-left: 10px;
-}
-
-
-.footer .content.has-text-centered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--primary);
 }
