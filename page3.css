@@ -514,3 +514,21 @@ img {
     align-items: center;
     background-color: var(--primary);
 }
+
+
+
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        background-color:rgb(228, 233, 222);
+        box-shadow: 0px 7px 32px hsl(198deg, 100%, 70%);;
+        padding: .5rem 0;
+        color: black;
+    }
+    .navbar-item, .navbar-link {
+        color: black;
+        display: block;
+        line-height: 1.5;
+        padding: .5rem .75rem;
+        position: relative;
+    }
+}
