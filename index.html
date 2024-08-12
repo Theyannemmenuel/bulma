@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yann shop</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+   
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <link rel="stylesheet" href="style.css">
@@ -24,15 +26,15 @@
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
-                </div>
-                <div id="navbarBasic" class="navbar-menu">
+                </div><div id="navbarBasic" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item" href="#">Accueil</a>
+                        <a class="navbar-item" href="index.html">Accueil</a>
                         <a class="navbar-item" href="page3.html">Produits</a>
                         <a class="navbar-item" href="page2.html">À propos</a>
-                        
                         <a class="navbar-item" href="page4.html">
-                            <img src="cart.png" alt="cart icon" width="30px">
+                            <span class="icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
                             <span id="cart-count">0</span>
                         </a>
                     </div>
@@ -89,21 +91,20 @@
                 <h1 class="title is-4">Inscris-toi maintenant</h1>
                 <p class="description">Entre tes coordonnées</p>
                 <form>
-                  <div class="field">
-                    <div class="control">
-                      <input class="input is-medium" type="text" placeholder="Nom">
+                    <div class="field">
+                      <div class="control">
+                        <input class="input is-medium" type="text" placeholder="Nom" id="nom" name="nom">
+                      </div>
                     </div>
-                  </div>
-  
-                  <div class="field">
-                    <div class="control">
-                      <input class="input is-medium" type="email" placeholder="Email">
-                    </div>
-                  </div>
-                  <button class="button is-block is-primary is-fullwidth is-medium">Envoyer</button>
-                  <br />
                   
-                </form>
+                    <div class="field">
+                      <div class="control">
+                        <input class="input is-medium" type="email" placeholder="Email" id="email" name="email">
+                      </div>
+                    </div>
+                    <button class="button is-block is-primary is-fullwidth is-medium">Envoyer</button>
+                    <br />
+                  </form>
               </div>
             </div>
           </div>
@@ -143,9 +144,6 @@
                 </div>
                 <div class="column">
                     <a href="page2.html" class="button is-text">À propos</a>
-                </div>
-                <div class="column">
-                    <a href="" class="button is-text">Contact</a>
                 </div>
             </div>
             <p>&copy; Yann Amangoua | Tous droits réservés</p>

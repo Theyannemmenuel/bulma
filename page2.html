@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
@@ -23,14 +24,16 @@
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
-                </div>
-                <div id="navbarBasic" class="navbar-menu">
+                </div> <div id="navbarBasic" class="navbar-menu">
                     <div class="navbar-end">
                         <a class="navbar-item" href="index.html">Accueil</a>
                         <a class="navbar-item" href="page3.html">Produits</a>
                         <a class="navbar-item" href="page2.html">À propos</a>
                         <a class="navbar-item" href="page4.html">
-                            <img src="cart.png" alt="cart icon" width="30px">
+                            <span class="icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                            <span id="cart-count">0</span>
                         </a>
                     </div>
                 </div>
@@ -61,7 +64,7 @@
 
 <section class="section">
     <div class="container-1">
-        <div class="columns">
+        <div class="columns-1">
              <div class="colum is-half-1">
                     <h1 class="title">Dates à venir</h1>
                     <div class="content">
@@ -90,11 +93,7 @@
                                 </h3>
                     </div>
                 </div>
-            <div class="column">
-                <div class="powerful">
-                    <img src="WhatsApp-Image-2024-04-16-at-14.24.40.png" alt="">
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -180,9 +179,6 @@
             </div>
             <div class="column">
                 <a href="page2.html" class="button is-text">À propos</a>
-            </div>
-            <div class="column">
-                <a href="" class="button is-text">Contact</a>
             </div>
         </div>
         <p>&copy; Yann Amangoua | Tous droits réservés</p>

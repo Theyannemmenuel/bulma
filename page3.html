@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produits</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
@@ -13,9 +13,11 @@
 <body>
     <section class="section header-section">
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <img src="Design_sans_titre-removebg-preview.png" alt="Logo">
+                    <a class="navbar-item" href="index.html">
+                        <img src="Design_sans_titre-removebg-preview.png" alt="Logo" width="112" height="28">
+                    </a>
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
@@ -27,9 +29,10 @@
                         <a class="navbar-item" href="index.html">Accueil</a>
                         <a class="navbar-item" href="page3.html">Produits</a>
                         <a class="navbar-item" href="page2.html">À propos</a>
-                        <a class="navbar-item" href="#">Contact</a>
                         <a class="navbar-item" href="page4.html">
-                            <img src="cart.png" alt="cart icon" width="30px">
+                            <span class="icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
                             <span id="cart-count">0</span>
                         </a>
                     </div>
@@ -38,64 +41,62 @@
         </div>
     </section>
 
-    <section class="hero is-info">
+    <section class="hero is-primary is-bold">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
-                    Offre Spéciale : -20% sur toute la collection été !
-                </h1>
-                <h2 class="subtitle">
-                    Utilisez le code VIBE20 lors du paiement.
-                </h2>
+                <h1 class="title">Offre Spéciale : -20% sur toute la collection été !</h1>
+                <h2 class="subtitle">Utilisez le code VIBE20 lors du paiement.</h2>
             </div>
         </div>
     </section>
-
     <section class="section">
         <div class="container">
-            <div class="columns is-vcentered">
-                <div class="column is-one-quarter">
-                    <div class="field">
-                        <label class="label">Trier par</label>
-                        <div class="control">
-                            <div class="select">
-                                <select>
-                                    <option>Prix</option>
-                                    <option>Popularité</option>
-                                    <option>Nouveautés</option>
-                                </select>
+            <div class="columns">
+                <div class="column is-3">
+                    <aside class="menu">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu-filter">
+                                    <span>Filtres</span>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu-filter" role="menu">
+                                <div class="dropdown-content">
+                                    <a href="#" class="dropdown-item">Marque</a>
+                                    <a href="#" class="dropdown-item">Couleur</a>
+                                    <a href="#" class="dropdown-item">Taille</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="column is-one-quarter">
-                    <div class="field">
-                        <label class="label">Filtres</label>
-                        <div class="control">
-                            <div class="select">
-                                <select>
-                                    <option>Marque</option>
-                                    <option>Couleur</option>
-                                    <option>Taille</option>
-                                </select>
+    
+                        <div class="dropdown is-hoverable mt-3">
+                            <div class="dropdown-trigger">
+                                <button class="button is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu-sort">
+                                    <span>Trier par</span>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu-sort" role="menu">
+                                <div class="dropdown-content">
+                                    <a href="#" class="dropdown-item">Prix</a>
+                                    <a href="#" class="dropdown-item">Popularité</a>
+                                    <a href="#" class="dropdown-item">Nouveautés</a>
+                                </div>
                             </div>
                         </div>
+                    </aside>
+                </div>
+                <div class="column">
+                    <h1 class="title has-text-centered">Nos Produits</h1>
+                    <div class="columns is-multiline" id="products-container">
+                        <!-- Les produits seront générés ici dynamiquement -->
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="product_section layout_padding">
-        <div class="container">
-            <div class="heading_container heading_center">
-                <h1><b>Nos Produits</b></h1>
-            </div>
-            <div class="row" id="products-container">
-                <!-- Vos produits vont être générés dynamiquement ici -->
-            </div>
-            <div class="btn-box">
-                <button class="button is-block is-primary is-fullwidth is-medium">Voir les autres produits</button>
             </div>
         </div>
     </section>
@@ -116,109 +117,47 @@
                     <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="columns">
-                <div class="column">
-                    <a href="" class="button is-text">Accueil</a>
-                </div>
-                <div class="column">
-                    <a href="page3.html" class="button is-text">Produits</a>
-                </div>
-                <div class="column">
-                    <a href="page2.html" class="button is-text">À propos</a>
-                </div>
-                <div class="column">
-                    <a href="" class="button is-text">Contact</a>
-                </div>
+
+        <div class="columns">
+            <div class="column">
+                <a href="index.html" class="button is-text">Accueil</a>
             </div>
+            <div class="column">
+                <a href="page3.html" class="button is-text">Produits</a>
+            </div>
+            <div class="column">
+                <a href="page2.html" class="button is-text">À propos</a>
+            </div>
+        </div>
             <p>&copy; Yann Amangoua | Tous droits réservés</p>
         </div>
     </footer>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="page4.js"></script>
+    <script src="page3.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const products = [
-                { id: '1', name: 'Nike', price: 90, image: 'Adidas_chaussures.png' },
-                { id: '2', name: 'Adidas Crazyfast Elite FG', price: 90, image: 'Adidas_Crazyfast_Elite_FG.png' },
-                { id: '3', name: 'Adidas Messi Bienvenido Miami FG', price: 90, image: 'Adidas_Messi_Bienvenido_Miami_FG.png' },
-                { id: '4', name: 'Adidas Predator Elite FG', price: 90, image: 'Adidas_Predator_Elite_FG_9_transparent.png' }
-            ];
-
-            const productsContainer = document.getElementById('products-container');
-
-            products.forEach(product => {
-                const productElement = document.createElement('div');
-                productElement.classList.add('column', 'is-half');
-                productElement.innerHTML = `
-                    <div class="box">
-                        <div class="option_container">
-                            <div class="options">
-                                <a href="#" class="option1" onclick="addToCart('${product.id}', '${product.name}', ${product.price}, '${product.image}')">
-                                    Ajouter au panier
-                                </a>
-                                <a href="#" class="option2" onclick="payNow()">
-                                    Payer Maintenant
-                                </a>
-                            </div>
-                        </div>
-                        <div class="img-box">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="detail-box">
-                            <h5>${product.name}</h5>
-                            <h6>${product.price}€</h6>
-                        </div>
-                    </div>
-                `;
-                productsContainer.appendChild(productElement);
-            });
-        });
-
-        function addToCart(id, name, price, image) {
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const existingItem = cartItems.find(item => item.id === id);
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cartItems.push({ id, name, price, image, quantity: 1 });
-            }
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            alert(`${name} a été ajouté au panier!`);
-            updateCartCount();
-        }
-
-        function payNow() {
-            window.location.href = 'page5.html';
-        }
-
-        function updateCartCount() {
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            document.getElementById('cart-count').textContent = cartItems.length;
-        }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-            
-            if ($navbarBurgers.length > 0) {
-
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener('click', () => {
-
-                        
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-
+            // Fonctions pour ouvrir/fermer les dropdowns
+            const dropdowns = document.querySelectorAll('.dropdown:not(.is-hoverable)');
+        
+            if (dropdowns.length > 0) {
+                dropdowns.forEach((dropdown) => {
+                    dropdown.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        dropdown.classList.toggle('is-active');
                     });
+                });
+        
+                // Fermer tous les dropdowns quand on clique en dehors
+                document.addEventListener('click', (event) => {
+                    closeDropdowns();
+                });
+            }
+        
+            function closeDropdowns() {
+                dropdowns.forEach((dropdown) => {
+                    dropdown.classList.remove('is-active');
                 });
             }
         });
