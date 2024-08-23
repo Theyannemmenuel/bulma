@@ -44,7 +44,38 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Nouvelle partie : Gestion des filtres
+    setupFilters();
 });
+
+function setupFilters() {
+    const filterDropdown = document.querySelector('.dropdown-trigger[data-target="dropdown-menu-filter"]');
+    const filterMenu = document.getElementById('dropdown-menu-filter');
+    const filterItems = filterMenu.querySelectorAll('.dropdown-item');
+
+    filterDropdown.addEventListener('click', (e) => {
+        e.preventDefault();
+        filterMenu.classList.toggle('is-active');
+    });
+
+    filterItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedFilter = e.target.textContent;
+            console.log(`Filtre sélectionné : ${selectedFilter}`);
+            // Ici, vous pouvez ajouter la logique pour appliquer le filtre
+            filterMenu.classList.remove('is-active');
+        });
+    });
+
+    // Fermer le menu si on clique en dehors
+    document.addEventListener('click', (e) => {
+        if (!filterDropdown.contains(e.target) && !filterMenu.contains(e.target)) {
+            filterMenu.classList.remove('is-active');
+        }
+    });
+}
 
 function addToCart(id, name, price, image) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
