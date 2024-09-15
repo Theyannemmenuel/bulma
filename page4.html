@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="page4.css">
 </head>
@@ -25,10 +25,11 @@
                         <a class="navbar-item" href="index.html">Accueil</a>
                         <a class="navbar-item" href="page3.html">Produits</a>
                         <a class="navbar-item" href="page2.html">À propos</a>
-                        <a class="navbar-item" href="#">Contact</a>
                         <a class="navbar-item" href="page4.html">
-                            <img src="cart.png" alt="cart icon" width="30px">
-                            <span class="cart-count" id="cart-count">0</span>
+                            <span class="icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                            <span id="cart-count">0</span>
                         </a>
                     </div>
                 </div>
@@ -76,15 +77,14 @@
                 <div class="column">
                     <a href="page2.html" class="button is-text">À propos</a>
                 </div>
-                <div class="column">
-                    <a href="" class="button is-text">Contact</a>
-                </div>
             </div>
             <p>&copy; Yann Amangoua | Tous droits réservés</p>
         </div>
     </footer>
 
     <script src="page4.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
