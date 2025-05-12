@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="page5.css">
+
+    <!-- Script Stripe -->
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 </head>
 <body>
     <section class="section header-section">
@@ -38,39 +41,11 @@
     <section class="section">
         <div class="container">
             <h1 class="title">Paiement</h1>
-            <form>
-                <div class="field">
-                    <label class="label">Nom complet</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Entrez votre nom complet">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">Adresse de livraison</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Entrez votre adresse de livraison">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">Numéro de carte</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Entrez votre numéro de carte">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">Date d'expiration</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="MM/AA">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">CVC</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="CVC">
-                    </div>
-                </div>
-                <button class="button is-primary">Payer</button>
-            </form>
+            
+            <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+            <stripe-pricing-table pricing-table-id="prctbl_1QfIMS1nR2eKCib8NlBowMhI"
+            publishable-key="pk_live_51Q80wA1nR2eKCib8WPKbRcvrTCF8R6C1Dnfw3nDhEXBTMxo1alwwlIsI5ty7FTS8gNoW9ZKRaNm89XTnYXvMTOis00vmwsyv9o">
+            </stripe-pricing-table>
         </div>
     </section>
 
@@ -108,31 +83,5 @@
         </div>
     </footer>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script> document.addEventListener('DOMContentLoaded', () => {
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-        if ($navbarBurgers.length > 0) {
-            $navbarBurgers.forEach(el => {
-                el.addEventListener('click', () => {
-                    const target = el.dataset.target;
-                    const $target = document.getElementById(target);
-
-                    el.classList.toggle('is-active');
-                    $target.classList.toggle('is-active');
-                });
-            });
-        }
-    });
-
-    function addToCart() {
-        window.location.href = 'cart.html';
-    }
-
-    function payNow() {
-        window.location.href = 'payment.html';
-    }
-</script>
+</body>
+</html>

@@ -1,11 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const products = [
-        { id: '1', name: 'Nike Air Max', price: 120, image: 'Adidas_chaussures.png' },
-        { id: '2', name: 'Adidas Ultraboost', price: 180, image: 'Adidas_Messi_Bienvenido_Miami_FG.png' },
-        { id: '3', name: 'Puma RS-X', price: 110, image: 'puma-rs-x.jpg' },
-        { id: '4', name: 'New Balance 990', price: 175, image: 'new-balance-990.jpg' },
-        // Ajoutez d'autres produits ici
-    ];
+    
 
     const productsContainer = document.getElementById('products-container');
 

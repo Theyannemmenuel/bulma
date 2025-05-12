@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.classList.contains('delete')) {
             const id = event.target.getAttribute('data-id');
             removeItemFromCart(id);
+            
         }
     });
 

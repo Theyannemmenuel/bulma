@@ -15,7 +15,10 @@
         <div class="container">
             <nav class="navbar">
                 <div class="navbar-brand">
-                    <img src="Design_sans_titre-removebg-preview.png" alt="Logo" href="index.html">
+                        <a href="index.html">
+                            <img src="Design_sans_titre-removebg-preview.png" alt="Logo">
+                        </a>
+                        
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
@@ -96,9 +99,11 @@
                 <!-- Vos produits vont être générés dynamiquement ici -->
             </div>
             <div class="btn-box">
-                <button class="button is-block is-primary is-fullwidth is-medium">Voir les autres produits</button>
+                <button id="load-more" class="button is-block is-primary is-fullwidth is-medium">Voir les autres produits</button>
+
             </div>
         </div>
+        
     </section>
 
     <footer class="footer">
@@ -140,9 +145,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const products = [
-                { id: '1', name: 'Adidas', price: 90, image: 'crampons/Adidas_chaussures.png' },
+                { id: '1', name: 'Adidas Predator', price: 90, image: 'crampons/Adidas_chaussures-removebg-preview.png' },
                 { id: '2', name: 'Adidas Crazyfast ', price: 90, image: 'crampons/Adidas_Crazyfast_Elite_FG.png' },
-                { id: '3', name: 'Adidas Messi ' , price: 90, image: 'crampons/Adidas_Messi_Bienvenido_Miami_FG.png' },
+                { id: '3', name: 'Adidas Messi ' , price: 90, image: 'crampons/Adidas_Messi_Bienvenido_Miami_FG-removebg-preview.png' },
                 { id: '4', name: 'Adidas Predator ', price: 90, image: 'crampons/Adidas_Predator_Elite_FG_9_transparent.png' }
             ];
 
@@ -218,6 +223,81 @@
 
                     });
                 });
+            }
+        });
+    </script>
+    <script>
+        let currentPage = 1;
+        const productsPerPage = 4; // Nombre de produits à charger à chaque fois
+    
+        const allProducts = [
+            { id: '1', name: 'Adidas Predator', price: 90, image: 'crampons/Adidas_chaussures-removebg-preview.png' },
+            { id: '2', name: 'Adidas Crazyfast', price: 90, image: 'crampons/Adidas_Crazyfast_Elite_FG.png' },
+            { id: '3', name: 'Adidas Messi', price: 90, image: 'crampons/Adidas_Messi_Bienvenido_Miami_FG-removebg-preview.png' },
+            { id: '4', name: 'Adidas Predator', price: 90, image: 'crampons/Adidas_Predator_Elite_FG_9_transparent.png' },
+            // Ajoutez ici d'autres produits...
+        ];
+    
+        function createProductElement(product) {
+            const productElement = document.createElement('div');
+            productElement.classList.add('column', 'is-half');
+            productElement.innerHTML = `
+                <div class="box">
+                    <div class="option_container">
+                        <div class="options">
+                            <a href="#" class="option1" onclick="addToCart('${product.id}', '${product.name}', ${product.price}, '${product.image}')">
+                                Ajouter au panier
+                            </a>
+                            <a href="#" class="option2" onclick="payNow()">
+                                Payer Maintenant
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-box">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="detail-box">
+                        <h5>${product.name}</h5>
+                        <h6>${product.price}€</h6>
+                    </div>
+                </div>
+            `;
+            return productElement;
+        }
+    
+        function loadMoreProducts() {
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const newProducts = allProducts.slice(startIndex, endIndex);
+            const productsContainer = document.getElementById('products-container');
+    
+            newProducts.forEach(product => {
+                const productElement = createProductElement(product);
+                productsContainer.appendChild(productElement);
+            });
+    
+            currentPage++;
+    
+            // Cacher le bouton si tous les produits ont été chargés
+            if (endIndex >= allProducts.length) {
+                document.getElementById('load-more').style.display = 'none';
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vider le conteneur de produits existant
+            const productsContainer = document.getElementById('products-container');
+            productsContainer.innerHTML = '';
+    
+            // Charger les premiers produits
+            loadMoreProducts();
+    
+            // Ajouter l'écouteur d'événements au bouton
+            const loadMoreButton = document.getElementById('load-more');
+            if (loadMoreButton) {
+                loadMoreButton.addEventListener('click', loadMoreProducts);
+            } else {
+                console.error("Le bouton 'load-more' n'a pas été trouvé");
             }
         });
     </script>

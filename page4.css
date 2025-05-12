@@ -582,3 +582,13 @@ img {
         position: relative;
     }
 }
+
+
+#cart-count {
+    background-color: #3273dc;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}

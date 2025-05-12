@@ -23,6 +23,18 @@ html, body {
     overflow-x: hidden; 
 }
 
+.navbar-item .icon {
+    margin-right: 5px;
+}
+
+#cart-count {
+    background-color: #3273dc;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
 
 .navbar{
     background-color: rgb(228, 233, 222); 
@@ -514,3 +526,9 @@ img {
     background-color:  hsl(198deg, 100%, 70%);
 }
 
+
+#load-more{
+    color: red;
+     --primary: hsl(198deg, 100%, 70%);   ;
+    
+}
